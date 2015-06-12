@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
 	def create
 	user = User.from_omniauth(env["omniauth.auth"])
-	debugger
 	if  user.email.blank?
 		redirect_to auth_edit_path(id: user.id)
 	else
